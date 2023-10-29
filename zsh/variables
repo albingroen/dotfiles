@@ -1,0 +1,13 @@
+# Use oh-my-zsh
+export ZSH="/Users/demando/.oh-my-zsh"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Theming fix
+export TERM=xterm-256color
+
+# Use nvim as default system editor
+export EDITOR=nvim
+
+# Use Kitty as default system terminal
+export TERMINAL=kitty
