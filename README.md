@@ -1,4 +1,4 @@
-![punktfiler-og](https://github.com/albingroen/punktfiler/assets/19674362/8f4f99a7-b8b5-42f2-9817-98b4905fd51b)
+![punktfiler-og](https://github.com/albingroen/punktfiler/assets/19674362/a753ce6a-e452-4f76-a840-75126ddce285)
 
 # punktfiler
 
