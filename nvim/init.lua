@@ -27,6 +27,9 @@ vim.o.number = true
 vim.o.numberwidth = 2
 vim.o.relativenumber = true
 
+-- Folding
+vim.opt.foldcolumn = "auto"
+
 -- Scrolling and Display
 vim.o.scrolloff = 3
 vim.o.showmode = false
