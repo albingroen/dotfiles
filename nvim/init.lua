@@ -192,36 +192,6 @@ require("lazy").setup(
         require("nvim-surround").setup()
       end
     },
-    {
-      "nvim-tree/nvim-tree.lua",
-      version = "*",
-      dependencies = {"nvim-tree/nvim-web-devicons"},
-      event = "VeryLazy",
-      config = {
-        git = {
-          enable = true
-        },
-        renderer = {
-          root_folder_label = false,
-          icons = {
-            show = {
-              git = false
-            }
-          },
-          indent_markers = {
-            enable = true
-          }
-        },
-        update_focused_file = {
-          enable = true,
-          update_cwd = false,
-          ignore_list = {}
-        },
-        filters = {
-          dotfiles = true
-        }
-      }
-    }
   }
 )
 
@@ -285,12 +255,6 @@ vim.api.nvim_create_autocmd(
     end
   }
 )
-
------------------
---- nvim-tree ---
------------------
-
-map("n", "<C-n>", ":NvimTreeFindFileToggle<cr>", {silent = true, noremap = true})
 
 --------------------
 --- comment.nvim ---
