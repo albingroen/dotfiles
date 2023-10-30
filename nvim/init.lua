@@ -246,6 +246,7 @@ map("n", "<C-P>", telescope_builtin.find_files, {})
 map("n", "<C-F>", telescope_builtin.live_grep, {})
 map("n", "<C-B>", telescope_builtin.buffers, {})
 map("n", "<C-G>", telescope_builtin.git_branches, {})
+map("n", "<C-W>", telescope_builtin.grep_string, {})
 
 vim.api.nvim_create_autocmd(
   "VimEnter",
