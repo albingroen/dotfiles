@@ -147,7 +147,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(
   {
     "knubie/vim-kitty-navigator",
-    "kevinhwang91/nvim-bqf",
     {
       "nvim-treesitter/nvim-treesitter",
       config = function()
@@ -228,8 +227,8 @@ local telescope_builtin = require("telescope.builtin")
 telescope.setup {
   defaults = {
     prompt_prefix = "   ",
-    selection_caret = "  ",
-    entry_prefix = "  "
+    selection_caret = " ",
+    entry_prefix = " "
   },
   pickers = {
     find_files = {
