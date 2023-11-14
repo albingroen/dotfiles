@@ -64,6 +64,7 @@ require("lazy").setup(
     "nvim-tree/nvim-web-devicons",
     "nvim-treesitter/nvim-treesitter",
     "stevearc/oil.nvim",
+    "nvimtools/none-ls.nvim",
     {"JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy"},
     {"kylechui/nvim-surround", event = "VeryLazy"},
     {"numToStr/Comment.nvim", lazy = false},
@@ -152,14 +153,6 @@ vim.api.nvim_create_autocmd(
       map("n", "<space>rn", vim.lsp.buf.rename, opts)
       map({"n", "v"}, "<space>.", vim.lsp.buf.code_action, opts)
       map("n", "gr", vim.lsp.buf.references, opts)
-      map(
-        "n",
-        "<space>f",
-        function()
-          vim.lsp.buf.format {async = true}
-        end,
-        opts
-      )
     end
   }
 )
@@ -225,3 +218,25 @@ map("n", "<C-F>", telescope_builtin.live_grep, {})
 
 -- nvim-surround
 require("nvim-surround").setup()
+
+-- null-ls
+local null_ls = require("null-ls")
+
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.diagnostics.eslint
+  },
+  on_attach = function(client, bufnr)
+    if client.supports_method("textDocument/formatting") then
+      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = bufnr })
+        end,
+      })
+    end
+  end,
+})
