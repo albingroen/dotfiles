@@ -98,10 +98,6 @@ require("lazy").setup({
 		opts = {},
 	},
 	{
-		"kevinhwang91/nvim-bqf",
-		opts = {},
-	},
-	{
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("nvim-treesitter.configs").setup({
