@@ -98,6 +98,10 @@ require("lazy").setup({
 		opts = {},
 	},
 	{
+		"kevinhwang91/nvim-bqf",
+		opts = {},
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("nvim-treesitter.configs").setup({
@@ -167,6 +171,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 	callback = function(ev)
 		local opts = { buffer = ev.buf }
+		vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
