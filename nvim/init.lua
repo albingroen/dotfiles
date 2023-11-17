@@ -26,6 +26,7 @@ vim.o.updatetime = 300
 vim.o.cmdheight = 0
 vim.opt.list = true
 vim.o.laststatus = 3
+vim.o.pumheight = 10
 vim.opt.listchars = {leadmultispace = "│ ", multispace = "│ ", tab = "│ "}
 
 local map = vim.keymap.set
