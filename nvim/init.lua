@@ -129,11 +129,35 @@ require("Comment").setup {
   pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
 }
 
-require('telescope').setup{
+local colors = { magenta = "#de9bc8", gray01 = "#222221", gray02 = "#2a2a29", gray03 = "#323231" }
+
+require("telescope").setup({
+  defaults = {
+    prompt_prefix = "",
+    selection_caret = "",
+    entry_prefix = "",
+  },
   pickers = {
-    find_files = {
-      theme = "dropdown",
-      previewer = false
-    }
+    find_files = { theme = "ivy" },
+    live_grep = { theme = "ivy" },
   }
+})
+
+local TelescopeColor = {
+	TelescopeMatching = { fg = colors.magenta },
+	TelescopeSelection = { fg = colors.text, bg = colors.gray03, bold = true },
+	TelescopePromptPrefix = { bg = colors.gray01 },
+	TelescopePromptNormal = { bg = colors.gray01 },
+	TelescopeResultsNormal = { bg = colors.gray01 },
+	TelescopePreviewNormal = { bg = colors.gray02 },
+	TelescopePromptBorder = { bg = colors.gray01, fg = colors.gray01 },
+	TelescopeResultsBorder = { bg = colors.gray01, fg = colors.gray01 },
+	TelescopePreviewBorder = { bg = colors.gray02, fg = colors.gray02 },
+	TelescopePromptTitle = { bg = colors.gray01, fg = colors.gray01 },
+	TelescopeResultsTitle = { bg = colors.gray01, fg = colors.gray01 },
+	TelescopePreviewTitle = { bg = colors.gray02, fg = colors.gray02 },
 }
+
+for hl, col in pairs(TelescopeColor) do
+	vim.api.nvim_set_hl(0, hl, col)
+end
