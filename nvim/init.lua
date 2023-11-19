@@ -58,6 +58,12 @@ require("lazy").setup(
   {
     "knubie/vim-kitty-navigator",
     {
+      "nvim-tree/nvim-tree.lua",
+      version = "*",
+      lazy = false,
+      dependencies = { "nvim-tree/nvim-web-devicons" }
+    },
+    {
       "nvim-treesitter/nvim-treesitter",
       config = function()
         require "nvim-treesitter.configs".setup {
@@ -144,20 +150,22 @@ require("telescope").setup({
 })
 
 local TelescopeColor = {
-	TelescopeMatching = { fg = colors.magenta },
-	TelescopeSelection = { fg = colors.text, bg = colors.gray03, bold = true },
-	TelescopePromptPrefix = { bg = colors.gray01 },
-	TelescopePromptNormal = { bg = colors.gray01 },
-	TelescopeResultsNormal = { bg = colors.gray01 },
-	TelescopePreviewNormal = { bg = colors.gray02 },
-	TelescopePromptBorder = { bg = colors.gray01, fg = colors.gray01 },
-	TelescopeResultsBorder = { bg = colors.gray01, fg = colors.gray01 },
-	TelescopePreviewBorder = { bg = colors.gray02, fg = colors.gray02 },
-	TelescopePromptTitle = { bg = colors.gray01, fg = colors.gray01 },
-	TelescopeResultsTitle = { bg = colors.gray01, fg = colors.gray01 },
-	TelescopePreviewTitle = { bg = colors.gray02, fg = colors.gray02 },
+  TelescopeMatching = { fg = colors.magenta },
+  TelescopeSelection = { fg = colors.text, bg = colors.gray01, bold = true },
+  TelescopePromptPrefix = { bg = colors.gray01 },
+  TelescopePromptNormal = { bg = colors.gray01 },
+  TelescopeResultsNormal = { bg = colors.gray01 },
+  TelescopePreviewNormal = { bg = colors.gray02 },
+  TelescopePromptBorder = { bg = colors.gray01, fg = colors.gray01 },
+  TelescopeResultsBorder = { bg = colors.gray01, fg = colors.gray01 },
+  TelescopePreviewBorder = { bg = colors.gray02, fg = colors.gray02 },
+  TelescopePromptTitle = { bg = colors.gray01, fg = colors.gray01 },
+  TelescopeResultsTitle = { bg = colors.gray01, fg = colors.gray01 },
+  TelescopePreviewTitle = { bg = colors.gray02, fg = colors.gray02 },
 }
 
 for hl, col in pairs(TelescopeColor) do
-	vim.api.nvim_set_hl(0, hl, col)
+  vim.api.nvim_set_hl(0, hl, col)
 end
+
+require("nvim-tree").setup {}
