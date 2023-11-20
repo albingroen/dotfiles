@@ -23,7 +23,6 @@ vim.o.backup = false
 vim.o.writebackup = false
 vim.o.swapfile = false
 vim.o.updatetime = 300
-vim.o.cmdheight = 0
 vim.opt.list = true
 vim.o.laststatus = 3
 vim.o.pumheight = 10
@@ -58,13 +57,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
+        "lewis6991/gitsigns.nvim",
         "knubie/vim-kitty-navigator",
-        {
-            "nvim-tree/nvim-tree.lua",
-            version = "*",
-            lazy = false,
-            dependencies = {"nvim-tree/nvim-web-devicons"}
-        },
         {
             "nvim-treesitter/nvim-treesitter",
             config = function()
@@ -126,13 +120,16 @@ map(
 )
 map("n", "<C-P>", telescope_builtin.find_files, {})
 map("n", "<C-F>", telescope_builtin.live_grep, {})
+map("n", "<C-G>", telescope_builtin.grep_string, {})
+map("n", "<leader>gb", telescope_builtin.git_branches, {})
+map("n", "<leader>gc", telescope_builtin.git_commits, {})
 
 vim.api.nvim_create_autocmd(
     "VimEnter",
     {
         callback = function()
             if vim.fn.argv(0) == "" then
-                require("telescope.builtin").find_files()
+                telescope_builtin.find_files()
             end
         end
     }
@@ -147,13 +144,19 @@ local rsms_colors = {bg = "#1a1a19", fg = "#d1d1d1", black = "#333332", red = "#
 require("telescope").setup(
     {
         defaults = {prompt_prefix = "", selection_caret = "→ "},
-        pickers = {find_files = {theme = "ivy"}, live_grep = {theme = "ivy"}}
+        pickers = {
+          find_files = {theme = "ivy"},
+          live_grep = {theme = "ivy"},
+          grep_string = {theme = "ivy"},
+          git_branches = {theme = "ivy"},
+          git_commits = {theme = "ivy"}
+        }
     }
 )
 
 local TelescopeColor = {
-    TelescopeSelection = {bg = rsms_colors.gray01, bold = false},
-    TelescopeSelectionCaret = {fg = rsms_colors.gray05},
+    TelescopeSelection = {bg = rsms_colors.gray02, bold = false},
+    TelescopeSelectionCaret = {bg = rsms_colors.gray02, fg = rsms_colors.gray05},
     TelescopePromptPrefix = {bg = rsms_colors.gray01},
 
     TelescopePromptNormal = {bg = rsms_colors.gray01},
@@ -164,7 +167,7 @@ local TelescopeColor = {
     TelescopeResultsBorder = {bg = rsms_colors.gray01, fg = rsms_colors.gray01},
     TelescopePreviewBorder = {bg = rsms_colors.gray02, fg = rsms_colors.gray02},
 
-    TelescopePromptTitle = {bg = rsms_colors.gray01, fg = rsms_colors.gray04},
+    TelescopePromptTitle = {bg = rsms_colors.gray01, fg = rsms_colors.gray05},
     TelescopeResultsTitle = {bg = rsms_colors.gray01, fg = rsms_colors.gray01},
     TelescopePreviewTitle = {bg = rsms_colors.gray02, fg = rsms_colors.gray02}
 }
@@ -173,5 +176,4 @@ for hl, col in pairs(TelescopeColor) do
     vim.api.nvim_set_hl(0, hl, col)
 end
 
-require("nvim-tree").setup {}
-
+require('gitsigns').setup()
