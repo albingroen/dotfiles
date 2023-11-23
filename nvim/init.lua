@@ -26,7 +26,6 @@ vim.o.updatetime = 300
 vim.opt.list = true
 vim.o.laststatus = 3
 vim.o.pumheight = 10
-vim.opt.listchars = {leadmultispace = "│ ", multispace = "│ ", tab = "│ "}
 
 local map = vim.keymap.set
 
@@ -57,27 +56,21 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
     {
-        "lewis6991/gitsigns.nvim",
         "knubie/vim-kitty-navigator",
+        "nvim-lua/plenary.nvim",
+        {"JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy"},
+        {"nvim-telescope/telescope.nvim", event = "VeryLazy"},
+        {"neoclide/coc.nvim", branch = "release"},
+        {"numToStr/Comment.nvim", lazy = false},
         {
             "nvim-treesitter/nvim-treesitter",
             config = function()
                 require "nvim-treesitter.configs".setup {
-                    ensure_installed = {"typescript"},
                     highlight = {enable = true},
                     indent = {enable = true}
                 }
             end
         },
-        {
-            "JoosepAlviste/nvim-ts-context-commentstring",
-            event = "VeryLazy"
-        },
-        {
-            "numToStr/Comment.nvim",
-            lazy = false
-        },
-        {"neoclide/coc.nvim", branch = "release"},
         {
             "kvrohit/rasmus.nvim",
             lazy = false,
@@ -85,11 +78,6 @@ require("lazy").setup(
             config = function()
                 vim.cmd([[colorscheme rasmus]])
             end
-        },
-        {
-            "nvim-telescope/telescope.nvim",
-            dependencies = {{"nvim-lua/plenary.nvim"}},
-            event = "VeryLazy"
         },
         {
             "kylechui/nvim-surround",
@@ -120,9 +108,6 @@ map(
 )
 map("n", "<C-P>", telescope_builtin.find_files, {})
 map("n", "<C-F>", telescope_builtin.live_grep, {})
-map("n", "<C-G>", telescope_builtin.grep_string, {})
-map("n", "<leader>gb", telescope_builtin.git_branches, {})
-map("n", "<leader>gc", telescope_builtin.git_commits, {})
 
 vim.api.nvim_create_autocmd(
     "VimEnter",
@@ -135,45 +120,6 @@ vim.api.nvim_create_autocmd(
     }
 )
 
-require("Comment").setup {
+require("Comment").setup({
     pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
-}
-
-local rsms_colors = {bg = "#1a1a19", fg = "#d1d1d1", black = "#333332", red = "#ff968c", green = "#61957f", yellow = "#ffc591", blue = "#8db4d4", magenta = "#de9bc8", cyan = "#7bb099", white = "#d1d1d1", bright_black = "#4c4c4b", bright_red = "#ffafa5", bright_green = "#7aae98", bright_yellow = "#ffdeaa", bright_blue = "#a6cded", bright_magenta = "#f7b4e1", bright_cyan = "#94c9b2", bright_white = "#eaeaea", gray01 = "#222221", gray02 = "#2a2a29", gray03 = "#323231", gray04 = "#3a3a39", gray05 = "#6a6a69", gray06 = "#767675", gray07 = "#b6b6b5", none = "NONE"}
-
-require("telescope").setup(
-    {
-        defaults = {prompt_prefix = "", selection_caret = "→ "},
-        pickers = {
-          find_files = {theme = "ivy"},
-          live_grep = {theme = "ivy"},
-          grep_string = {theme = "ivy"},
-          git_branches = {theme = "ivy"},
-          git_commits = {theme = "ivy"}
-        }
-    }
-)
-
-local TelescopeColor = {
-    TelescopeSelection = {bg = rsms_colors.gray02, bold = false},
-    TelescopeSelectionCaret = {bg = rsms_colors.gray02, fg = rsms_colors.gray05},
-    TelescopePromptPrefix = {bg = rsms_colors.gray01},
-
-    TelescopePromptNormal = {bg = rsms_colors.gray01},
-    TelescopeResultsNormal = {bg = rsms_colors.gray01},
-    TelescopePreviewNormal = {bg = rsms_colors.gray02},
-
-    TelescopePromptBorder = {bg = rsms_colors.gray01, fg = rsms_colors.gray01},
-    TelescopeResultsBorder = {bg = rsms_colors.gray01, fg = rsms_colors.gray01},
-    TelescopePreviewBorder = {bg = rsms_colors.gray02, fg = rsms_colors.gray02},
-
-    TelescopePromptTitle = {bg = rsms_colors.gray01, fg = rsms_colors.gray05},
-    TelescopeResultsTitle = {bg = rsms_colors.gray01, fg = rsms_colors.gray01},
-    TelescopePreviewTitle = {bg = rsms_colors.gray02, fg = rsms_colors.gray02}
-}
-
-for hl, col in pairs(TelescopeColor) do
-    vim.api.nvim_set_hl(0, hl, col)
-end
-
-require('gitsigns').setup()
+})
