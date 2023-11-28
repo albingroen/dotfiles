@@ -9,11 +9,6 @@ vim.o.relativenumber = true
 vim.o.hlsearch = false
 vim.o.showmode = false
 vim.o.swapfile = false
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
-vim.o.expandtab = true
-vim.o.smartindent = true
 vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.termguicolors = true
@@ -58,6 +53,9 @@ require("lazy").setup(
     {
         "knubie/vim-kitty-navigator",
         "nvim-lua/plenary.nvim",
+        "tpope/vim-sleuth",
+        "tpope/vim-rhubarb",
+        "tpope/vim-fugitive",
         {"JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy"},
         {"nvim-telescope/telescope.nvim", event = "VeryLazy"},
         {"neoclide/coc.nvim", branch = "release"},
