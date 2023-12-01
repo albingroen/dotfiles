@@ -47,15 +47,26 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+local function change_background()
+    local m = vim.fn.system("defaults read -g AppleInterfaceStyle")
+    m = m:gsub("%s+", "")
+    if m == "Dark" then
+        vim.o.background = "dark" 
+    else
+        vim.o.background = "light" 
+    end
+end
+
 require("lazy").setup(
     {
-        "knubie/vim-kitty-navigator",
-        "nvim-lua/plenary.nvim",
         "tpope/vim-sleuth",
         "tpope/vim-rhubarb",
         "tpope/vim-fugitive",
-        {"JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy"},
+        "nvim-lua/plenary.nvim",
+        "knubie/vim-kitty-navigator",
         {"numToStr/Comment.nvim", lazy = false},
+        {'windwp/nvim-autopairs', event = "InsertEnter", opts = {}},
+        {"JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy"},
         {
             "nvim-telescope/telescope.nvim",
             event = "VeryLazy",
@@ -77,40 +88,19 @@ require("lazy").setup(
             end
         },
         {
-            "kvrohit/rasmus.nvim",
-            lazy = false,
+            "ellisonleao/gruvbox.nvim", 
             priority = 1000,
-            config = function()
-                vim.cmd([[colorscheme rasmus]])
-            end
+            config = function ()
+                change_background()
+
+                vim.cmd([[colorscheme gruvbox]])
+            end,
         },
         {
             "kylechui/nvim-surround",
             event = "VeryLazy",
             config = function()
                 require("nvim-surround").setup()
-            end
-        },
-        {
-            "neoclide/coc.nvim",
-            branch = "release",
-            config = function()
-                vim.keymap.set("n", "<leader>c", ":CocRestart<CR><CR>", {noremap = true, silent = true, desc = "Restart CoC language servers"})
-                vim.keymap.set("n", "<leader>.", "<Plug>(coc-codeaction)", {desc = "Code actions"})
-                vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})
-                vim.keymap.set("n", "gr", "<Plug>(coc-references)", {silent = true})
-                vim.keymap.set("n", "K", ":call CocActionAsync('doHover')<CR>", {silent = true, noremap = true})
-                vim.keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", {})
-                vim.keymap.set("n", "<leader>f", ":CocCommand prettier.formatFile<CR>", {noremap = true, desc = "Format file"})
-                vim.keymap.set("i", "<C-Space>", "coc#refresh()", {silent = true, expr = true})
-                vim.keymap.set("i", "<TAB>", "coc#pum#visible() ? coc#pum#next(1) : '<TAB>'", {noremap = true, silent = true, expr = true})
-                vim.keymap.set("i", "<S-TAB>", "coc#pum#visible() ? coc#pum#prev(1) : '<C-h>'", {noremap = true, expr = true})
-                vim.keymap.set(
-                    "i",
-                    "<CR>",
-                    "coc#pum#visible() ? coc#pum#confirm() : '<C-G>u<CR><C-R>=coc#on_enter()<CR>'",
-                    {silent = true, expr = true, noremap = true}
-                )
             end
         },
     }
