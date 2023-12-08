@@ -118,8 +118,8 @@ require("lazy").setup({
 
 			configs.setup({
 				highlight = { enable = true },
-				autotag = { enable = true },
 				indent = { enable = true },
+				autotag = { enable = true, enable_close_on_slash = false },
 			})
 		end,
 	},
