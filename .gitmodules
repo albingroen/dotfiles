@@ -1,3 +1,4 @@
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/albingroen/quick.nvim
+	branch = abgn
