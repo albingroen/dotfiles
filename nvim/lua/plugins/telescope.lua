@@ -30,5 +30,4 @@ return {
 		{ "<leader>s", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
 		{ "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
 	},
-	dependencies = { "nvim-lua/plenary.nvim" },
 }
