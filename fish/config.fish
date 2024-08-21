@@ -38,6 +38,7 @@ abbr -a l "tree -L 1 -a"
 abbr -a rb "git checkout main && git pull && git checkout - && git rebase main"
 abbr -a bu "brew upgrade"
 abbr -a cat "bat"
+abbr -a nd "npm run dev"
 
 # Zoxide
 zoxide init fish | source
