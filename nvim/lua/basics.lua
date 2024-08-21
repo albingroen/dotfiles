@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.wo.wrap = false
--- vim.opt.cursorline = true
+vim.opt.cursorline = true
 vim.opt.ignorecase = true
 vim.opt.incsearch = true
 vim.opt.mouse = "a"
