@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.wo.wrap = false
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 vim.opt.ignorecase = true
 vim.opt.incsearch = true
 vim.opt.mouse = "a"
@@ -35,6 +35,7 @@ vim.keymap.set("n", "vs", ":vs<CR>")
 vim.keymap.set("n", "<leader>j", ":cnext<CR>", { silent = true })
 vim.keymap.set("n", "<leader>k", ":cprevious<CR>", { silent = true })
 vim.keymap.set("n", "<leader>o", ":tabonly<cr>:only<CR>", { silent = true })
+vim.keymap.set("n", "<leader>n", ":tabnew ~/notes/new-note.md<cr>", { silent = true })
 
 -- Global LSP mappings
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)

@@ -4,6 +4,9 @@ return {
 	config = function()
 		require("gruvbox").setup({
 			contrast = "hard",
+			overrides = {
+				SignColumn = { bg = "None" },
+			},
 		})
 
 		vim.cmd("colorscheme gruvbox")
