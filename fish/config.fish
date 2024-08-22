@@ -40,6 +40,16 @@ abbr -a bu "brew upgrade"
 abbr -a cat "bat"
 abbr -a nd "npm run dev"
 
+function day
+    set today_date (date "+%Y-%m-%d")
+    set dir ~/notes/days/
+    set file_path $dir$today_date.md
+
+    test -d $dir || mkdir -p $dir
+
+    nvim $file_path
+end
+
 # Zoxide
 zoxide init fish | source
 
