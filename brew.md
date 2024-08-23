@@ -21,7 +21,7 @@ cleanmymac
 figma
 font-jetbrains-mono
 font-symbols-only-nerd-font
-kitty
 raycast
 spotify
 whatsapp
+wezterm
