@@ -15,6 +15,12 @@ end
 # Disable greeting
 set -g -x fish_greeting ""
 
+set -gx fish_cursor_default block
+set -gx fish_cursor_insert line
+set -gx fish_cursor_visual block
+set -gx fish_cursor_replace_one underscore
+set fish_vi_force_cursor 1
+
 # Abbreviations
 abbr -a vim nvim
 abbr -a v nvim
