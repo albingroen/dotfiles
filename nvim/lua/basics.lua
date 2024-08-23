@@ -23,6 +23,7 @@ vim.opt.pumheight = 10
 vim.opt.scrolloff = 3
 vim.opt.sidescrolloff = 3
 vim.opt.background = "dark"
+vim.opt.winbar = "%=%m %f"
 
 -- Basic mappings
 vim.keymap.set("n", "<C-S>", ":%s/")
