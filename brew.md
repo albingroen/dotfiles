@@ -3,7 +3,6 @@
 ## Cli tools
 
 bat
-docker
 fish
 fisher
 fzf
@@ -25,3 +24,4 @@ raycast
 spotify
 whatsapp
 wezterm
+docker
