@@ -1,6 +1,8 @@
 local wezterm = require("wezterm")
 local config = {}
 
+local act = wezterm.action
+
 config.color_scheme = "GruvboxDarkHard"
 config.font_size = 14
 config.line_height = 1.2
@@ -12,6 +14,11 @@ config.window_padding = {
 	bottom = 0,
 }
 
+config.inactive_pane_hsb = {
+	saturation = 0.8,
+	brightness = 0.6,
+}
+
 config.window_close_confirmation = "NeverPrompt"
 
 config.keys = {
@@ -19,17 +26,37 @@ config.keys = {
 	{
 		key = "Enter",
 		mods = "CMD",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "Backspace",
 		mods = "CMD",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "d",
 		mods = "CMD|SHIFT",
-		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+		action = act.CloseCurrentPane({ confirm = true }),
+	},
+	{
+		key = "h",
+		mods = "CTRL|SHIFT",
+		action = act.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "l",
+		mods = "CTRL|SHIFT",
+		action = act.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "k",
+		mods = "CTRL|SHIFT",
+		action = act.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "j",
+		mods = "CTRL|SHIFT",
+		action = act.ActivatePaneDirection("Down"),
 	},
 }
 
