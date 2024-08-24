@@ -24,6 +24,7 @@ end
 local function conditionalActivatePane(window, pane, pane_direction, vim_direction)
 	if isViProcess(pane) then
 		window:perform_action(act.SendKey({ key = vim_direction, mods = "CTRL" }), pane)
+	else
 		window:perform_action(act.ActivatePaneDirection(pane_direction), pane)
 	end
 end
