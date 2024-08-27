@@ -7,7 +7,6 @@ return {
 			overrides = {
 				SignColumn = { bg = "None" },
 			},
-			dim_inactive = true,
 		})
 
 		vim.cmd("colorscheme gruvbox")
