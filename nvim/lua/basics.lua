@@ -44,7 +44,3 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true })
 
 -- Global LSP mappings
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
-
--- Colorscheme
-vim.opt.background = "dark"
--- vim.cmd("colorscheme sonokai")
