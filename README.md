@@ -7,4 +7,5 @@ This includes configuration files for:
 - [Kitty](https://sw.kovidgoyal.net/kitty/)
 - [Fish](https://fishshell.com)
 - [Neovim](https://neovim.org)
-- [Aerospace](https://nikitabobko.github.io/AeroSpace/guide)
+
+And some lists of apps and cli programs I install through Homebrew
