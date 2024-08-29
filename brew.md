@@ -2,26 +2,25 @@
 
 ## Cli tools
 
-bat
-fish
-fisher
-fzf
-imagemagick
-neovim
-ripgrep
-tree
-zoxide
+- bat
+- fish
+- fisher
+- fzf
+- imagemagick
+- neovim
+- ripgrep
+- tree
+- zoxide
 
 ## Casks
 
-1password
-arc
-cleanmymac
-figma
-font-jetbrains-mono
-font-symbols-only-nerd-font
-raycast
-spotify
-whatsapp
-wezterm
-docker
+- 1password
+- arc
+- cleanmymac
+- figma
+- font-jetbrains-mono
+- raycast
+- spotify
+- whatsapp
+- kitty
+- docker
