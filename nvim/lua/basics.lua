@@ -36,11 +36,6 @@ vim.keymap.set("n", "vs", ":vs<CR>")
 vim.keymap.set("n", "<leader>j", ":cnext<CR>", { silent = true })
 vim.keymap.set("n", "<leader>k", ":cprevious<CR>", { silent = true })
 vim.keymap.set("n", "<leader>o", ":tabonly<cr>:only<CR>", { silent = true })
-vim.keymap.set("n", "<leader>n", ":tabnew ~/notes/new-note.md<cr>", { silent = true })
-vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { silent = true })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { silent = true })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true })
 
 -- Global LSP mappings
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
