@@ -45,6 +45,8 @@ abbr -a rb "git checkout main && git pull && git checkout - && git rebase main"
 abbr -a bu "brew upgrade"
 abbr -a cat "bat"
 abbr -a nd "npm run dev"
+abbr -a d "docker"
+abbr -a dc "docker compose"
 
 function day
     set today_date (date "+%Y-%m-%d")
