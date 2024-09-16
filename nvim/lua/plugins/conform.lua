@@ -11,6 +11,7 @@ return {
 			json = { "prettierd" },
 			css = { "prettierd" },
 			lua = { "stylua" },
+			python = { "black" },
 		},
 		format_on_save = {},
 	},
