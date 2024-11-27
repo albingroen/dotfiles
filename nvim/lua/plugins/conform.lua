@@ -10,6 +10,7 @@ return {
 			html = { "prettierd" },
 			json = { "prettierd" },
 			css = { "prettierd" },
+			svelte = { "prettierd" },
 			lua = { "stylua" },
 			python = { "black" },
 		},

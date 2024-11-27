@@ -48,6 +48,7 @@ abbr -a nd "npm run dev"
 abbr -a d "docker"
 abbr -a dc "docker compose"
 abbr -a rebase "git checkout master && git pull && git checkout - && git rebase -"
+abbr -a sync "git commit -m 'sync'"
 
 function day
     set today_date (date "+%Y-%m-%d")
