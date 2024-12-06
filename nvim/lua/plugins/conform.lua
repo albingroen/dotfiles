@@ -7,7 +7,7 @@ return {
 			javascript = { "prettierd" },
 			typescript = { "prettierd" },
 			graphql = { "prettierd" },
-			html = { "prettierd" },
+			html = { "prettierd", "djlint" },
 			json = { "prettierd" },
 			css = { "prettierd" },
 			svelte = { "prettierd" },
