@@ -3,5 +3,4 @@ return {
 	"tpope/vim-sleuth",
 	"tpope/vim-fugitive",
 	"tpope/vim-rhubarb",
-	"nvim-tree/nvim-web-devicons",
 }
