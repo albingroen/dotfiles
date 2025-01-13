@@ -22,8 +22,6 @@ set -gx fish_cursor_replace_one underscore
 set fish_vi_force_cursor 1
 
 # Abbreviations
-abbr -a vim nvim
-abbr -a v nvim
 abbr -a cl clear
 abbr -a g git
 abbr -a cgs "clear && git status"
@@ -57,7 +55,7 @@ function day
 
     test -d $dir || mkdir -p $dir
 
-    nvim $file_path
+    zed $file_path
 end
 
 # Zoxide
