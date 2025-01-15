@@ -1,5 +1,7 @@
 #!/usr/bin/fish
 
+theme_gruvbox dark hard
+
 if status is-interactive
     function fish_hybrid_key_bindings --description \
         "Vi-style bindings that inherit emacs-style bindings in all modes"
@@ -22,6 +24,8 @@ set -gx fish_cursor_replace_one underscore
 set fish_vi_force_cursor 1
 
 # Abbreviations
+abbr -a vim nvim
+abbr -a v nvim
 abbr -a cl clear
 abbr -a g git
 abbr -a cgs "clear && git status"
