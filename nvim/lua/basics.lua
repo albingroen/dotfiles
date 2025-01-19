@@ -36,5 +36,16 @@ vim.keymap.set("n", "<leader>j", ":cnext<CR>", { silent = true })
 vim.keymap.set("n", "<leader>k", ":cprevious<CR>", { silent = true })
 vim.keymap.set("n", "<leader>o", ":tabonly<cr>:only<CR>", { silent = true })
 
+-- Auto resize splits when the terminal's window is resized
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+	group = vim.api.nvim_create_augroup("EqualizeSplits", {}),
+	callback = function()
+		local current_tab = vim.api.nvim_get_current_tabpage()
+		vim.cmd("tabdo wincmd =")
+		vim.api.nvim_set_current_tabpage(current_tab)
+	end,
+	desc = "Resize splits with terminal window",
+})
+
 -- Global LSP mappings
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)

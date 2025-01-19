@@ -1,7 +1,5 @@
 #!/usr/bin/fish
 
-theme_gruvbox dark hard
-
 if status is-interactive
     function fish_hybrid_key_bindings --description \
         "Vi-style bindings that inherit emacs-style bindings in all modes"
@@ -59,7 +57,7 @@ function day
 
     test -d $dir || mkdir -p $dir
 
-    zed $file_path
+    nvim $file_path
 end
 
 # Zoxide
