@@ -18,7 +18,7 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.swapfile = false
 vim.opt.list = true
-vim.opt.laststatus = 3
+-- vim.opt.laststatus = 3
 vim.opt.pumheight = 10
 vim.opt.scrolloff = 3
 vim.opt.sidescrolloff = 3
@@ -49,3 +49,12 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 
 -- Global LSP mappings
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
+
+function GitBranch()
+	local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
+	if branch ~= "" then
+		return "  " .. branch
+	else
+		return ""
+	end
+end
