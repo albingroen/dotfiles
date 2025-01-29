@@ -31,10 +31,10 @@ map cmd+10 goto_tab 10
 # modify_font underline_thickness 2
 modify_font underline_position 4
 
-# map ctrl+j kitten pass_keys.py neighboring_window bottom ctrl+j
-# map ctrl+k kitten pass_keys.py neighboring_window top    ctrl+k
-# map ctrl+h kitten pass_keys.py neighboring_window left   ctrl+h
-# map ctrl+l kitten pass_keys.py neighboring_window right  ctrl+l
+map ctrl+j kitten pass_keys.py neighboring_window bottom ctrl+j
+map ctrl+k kitten pass_keys.py neighboring_window top    ctrl+k
+map ctrl+h kitten pass_keys.py neighboring_window left   ctrl+h
+map ctrl+l kitten pass_keys.py neighboring_window right  ctrl+l
 
 map ctrl+shift+i set_tab_title
 map ctrl+shift+space next_layout
@@ -54,8 +54,9 @@ map kitty_mod+h kitty_scrollback_nvim
 map kitty_mod+g kitty_scrollback_nvim --config ksb_builtin_last_cmd_output
 # Show clicked command output in nvim
 mouse_map ctrl+shift+right press ungrabbed combine : mouse_select_command_output : kitty_scrollback_nvim --config ksb_builtin_last_visited_cmd_output
+# background #141619
 
 # BEGIN_KITTY_THEME
-# Dracula
+# GitHub Light Colorblind
 include current-theme.conf
 # END_KITTY_THEME
