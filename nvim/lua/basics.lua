@@ -50,11 +50,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 -- Global LSP mappings
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 
-function GitBranch()
-	local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
-	if branch ~= "" then
-		return "  " .. branch
-	else
-		return ""
-	end
-end
+-- Disable copilot for org mode
+vim.g.copilot_filetypes = {
+	org = false,
+}
