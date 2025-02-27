@@ -1,7 +1,7 @@
 font_family JetBrains Mono Light
 font_size 14.0
 
-adjust_line_height 140%
+adjust_line_height 130%
 
 open_url_with default
 
@@ -28,7 +28,6 @@ map cmd+8 goto_tab 8
 map cmd+9 goto_tab 9
 map cmd+10 goto_tab 10
 
-# modify_font underline_thickness 2
 modify_font underline_position 4
 
 map ctrl+j kitten pass_keys.py neighboring_window bottom ctrl+j
@@ -54,9 +53,8 @@ map kitty_mod+h kitty_scrollback_nvim
 map kitty_mod+g kitty_scrollback_nvim --config ksb_builtin_last_cmd_output
 # Show clicked command output in nvim
 mouse_map ctrl+shift+right press ungrabbed combine : mouse_select_command_output : kitty_scrollback_nvim --config ksb_builtin_last_visited_cmd_output
-# background #141619
 
 # BEGIN_KITTY_THEME
-# GitHub Light Colorblind
+# Gruvbox Dark Hard
 include current-theme.conf
 # END_KITTY_THEME
