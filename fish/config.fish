@@ -50,16 +50,6 @@ abbr -a dc "docker compose"
 abbr -a rebase "git checkout master && git pull && git checkout - && git rebase -"
 abbr -a sync "git commit -m 'sync'"
 
-function day
-    set today_date (date "+%Y-%m-%d")
-    set dir ~/notes/days/
-    set file_path $dir$today_date.md
-
-    test -d $dir || mkdir -p $dir
-
-    nvim $file_path
-end
-
 # Zoxide
 zoxide init fish | source
 

@@ -22,9 +22,12 @@ vim.opt.laststatus = 3
 vim.opt.pumheight = 10
 vim.opt.scrolloff = 3
 vim.opt.sidescrolloff = 3
-vim.opt.background = "dark"
 
 -- Basic mappings
+-- vim.keymap.set("n", "<C-H>", "<C-W><C-H>")
+-- vim.keymap.set("n", "<C-J>", "<C-W><C-J>")
+-- vim.keymap.set("n", "<C-K>", "<C-W><C-K>")
+-- vim.keymap.set("n", "<C-L>", "<C-W><C-L>")
 vim.keymap.set("n", "<C-S>", ":%s/")
 vim.keymap.set("n", "sp", ":sp<CR>")
 vim.keymap.set("n", "tj", ":tabprev<CR>")
