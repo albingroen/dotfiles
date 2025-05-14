@@ -3,5 +3,5 @@ return {
 	"tpope/vim-sleuth",
 	"tpope/vim-fugitive",
 	"tpope/vim-rhubarb",
-	"github/copilot.vim",
+	"nvim-tree/nvim-web-devicons",
 }

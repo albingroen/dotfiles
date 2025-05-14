@@ -9,6 +9,7 @@ return {
 			graphql = { "prettierd" },
 			html = { "prettierd", "djlint" },
 			json = { "prettierd" },
+			jsonc = { "prettierd" },
 			css = { "prettierd" },
 			svelte = { "prettierd" },
 			lua = { "stylua" },

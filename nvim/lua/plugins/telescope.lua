@@ -7,7 +7,7 @@ return {
 			git_commits = { previewer = false, theme = "ivy" },
 			grep_string = { previewer = false, theme = "ivy" },
 			diagnostics = { previewer = false, theme = "ivy" },
-			find_files = { previewer = false, theme = "ivy" },
+			find_files = { previewer = true, theme = "ivy" },
 			buffers = { previewer = false, theme = "ivy" },
 			current_buffer_fuzzy_find = { theme = "ivy" },
 			resume = { previewer = false, theme = "ivy" },
