@@ -1,0 +1,26 @@
+{
+  "layer": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-right": ["network", "battery", "clock"],
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+  },
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+    },
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+  },
+  "clock": {
+    "format": "{:%a %d %b %H:%M}",
+    "tooltip-format": "{:%a %d %b %H:%M}",
+  },
+}

@@ -1,0 +1,22 @@
+window#waybar {
+  background: #111;
+}
+
+#workspaces button {
+  color: #555;
+}
+
+#workspaces button.active,
+#workspaces button:hover {
+  color: #fff;
+}
+
+#battery,
+#network,
+#clock {
+  margin-right: 20px;
+}
+
+#workspaces button {
+  border-radius: 0px;
+}
