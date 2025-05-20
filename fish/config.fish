@@ -20,6 +20,7 @@ set -gx fish_cursor_insert line
 set -gx fish_cursor_visual block
 set -gx fish_cursor_replace_one underscore
 set fish_vi_force_cursor 1
+set -gx HYPRSHOT_DIR ~/Pictures/Screenshots
 
 # Abbreviations
 abbr -a vim nvim
@@ -58,3 +59,6 @@ zoxide init fish | source
 
 # FZF
 fzf --fish | source
+
+# SSH agent
+fish_ssh_agent
