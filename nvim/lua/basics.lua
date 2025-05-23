@@ -22,6 +22,9 @@ vim.opt.laststatus = 3
 vim.opt.pumheight = 10
 vim.opt.scrolloff = 3
 vim.opt.sidescrolloff = 3
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false
 
 -- Basic mappings
 vim.keymap.set("n", "<C-S>", ":%s/")
