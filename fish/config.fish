@@ -59,6 +59,3 @@ zoxide init fish | source
 
 # FZF
 fzf --fish | source
-
-# SSH agent
-fish_ssh_agent
