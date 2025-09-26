@@ -20,7 +20,6 @@ set -gx fish_cursor_insert line
 set -gx fish_cursor_visual block
 set -gx fish_cursor_replace_one underscore
 set fish_vi_force_cursor 1
-set -gx HYPRSHOT_DIR ~/Pictures/Screenshots
 
 # Abbreviations
 abbr -a vim nvim
@@ -50,15 +49,9 @@ abbr -a d "docker"
 abbr -a dc "docker compose"
 abbr -a rebase "git checkout master && git pull && git checkout - && git rebase -"
 abbr -a sync "git commit -m 'sync'"
-abbr -a m1 "hyprctl dispatch moveworkspacetomonitor '0 0' && hyprctl dispatch moveworkspacetomonitor '1 0' && hyprctl dispatch moveworkspacetomonitor '2 0' && hyprctl dispatch moveworkspacetomonitor '3 0'"
-abbr -a m2 "hyprctl dispatch moveworkspacetomonitor '0 1' && hyprctl dispatch moveworkspacetomonitor '1 1' && hyprctl dispatch moveworkspacetomonitor '2 1' && hyprctl dispatch moveworkspacetomonitor '3 1'"
-abbr -a y "yazi"
 
 # Zoxide
 zoxide init fish | source
 
 # FZF
 fzf --fish | source
-
-# SSH agent
-fish_ssh_agent
