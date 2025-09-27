@@ -55,3 +55,9 @@ zoxide init fish | source
 
 # FZF
 fzf --fish | source
+
+# Load keychain
+if test -x /usr/bin/keychain
+    keychain --eval --quiet ~/.ssh/id_ed25519 | source
+end
+
