@@ -1,7 +1,0 @@
-shell-integration = fish
-adjust-cell-height = 12
-adjust-cursor-height = 15
-font-size = 15
-theme = GitHub Dark Colorblind
-cursor-style-blink = false
-shell-integration-features = no-cursor,no-sudo,title
