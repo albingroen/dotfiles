@@ -1,2 +1,3 @@
 fish/**/*
 !fish/config.fish
+.tmux/plugins
