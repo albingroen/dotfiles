@@ -1,0 +1,10 @@
+shell-integration = fish
+macos-titlebar-style = tabs
+adjust-cell-height = 12
+adjust-cursor-height = 12
+font-size = 15
+theme = light:Nvim Light,dark:Nvim Dark
+cursor-style-blink = false
+shell-integration-features = no-cursor,no-sudo,title
+keybind = global:cmd+ctrl+t=toggle_quick_terminal
+maximize = true
